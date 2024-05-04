@@ -24,16 +24,19 @@ let mergedPerson = { ...person1, ...person2 };
 
 console.log(mergedPerson);
 
+// for in 은 객체에 사용
 let person4 = { name: "John", age: 30, gender: "male" };
 for (let key in person4) {
   console.log(key + ": " + person4[key]);
 }
 
+// for of 는 배열에 사용
 let person5 = ["John", 30, "male"];
 for (let key of person5) {
   console.log(key + ": ");
 }
 
+// 구조분해 할당 [배열]
 let [_, value2] = [1, "new"];
 console.log(value2); // new
 
@@ -44,7 +47,7 @@ let arr = ["value1", "value2", "value3"];
 let [a, b] = arr;
 console.log(a, b); // value1 value2 value3
 
-// 객체의 경우
+// 구조분해 할당 [객체]
 var user = { name: "nbc", age: 30 };
 var { name, age } = user;
 
