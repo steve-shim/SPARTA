@@ -9,11 +9,12 @@
 // };
 
 // target은 객체
-var copyObjectDeep = function (target) {
+var copyObjectDeep = function (target, depth = 0) {
   var result = {};
+  depth++;
   if (typeof target === "object" && target !== null) {
     for (var prop in target) {
-      result[prop] = copyObjectDeep(target[prop]);
+      result[prop] = copyObjectDeep(target[prop], depth);
     }
   } else {
     result = target;
