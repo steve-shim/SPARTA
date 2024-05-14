@@ -6,9 +6,9 @@
 const object2 = {
   name: "별코딩",
   main: function () {
-    console.log("main this", this);
+    console.log("main this", this); // { name: '별코딩', main: [Function: main] }
     const innerFunction = () => {
-      console.log(this);
+      console.log("main arrow this", this); // { name: '별코딩', main: [Function: main] }
     };
     innerFunction();
   },
@@ -22,7 +22,7 @@ const object = {
   name: "별코딩",
   main: function () {
     const innerFunction = function () {
-      console.log(this);
+      console.log(this); // global or window
     };
     innerFunction();
   },
@@ -37,7 +37,7 @@ const object3 = {
   name: "별코딩",
   main: function () {
     const innerFunction = function () {
-      console.log(this);
+      console.log(this); // { hi: 'hi' }
     }.bind({ hi: "hi" });
     innerFunction();
   },

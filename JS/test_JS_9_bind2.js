@@ -24,3 +24,17 @@ var obj = {
   },
 };
 obj.outer();
+
+// this우회, call, apply, bind보다 편리한 방법
+// innerFunc가 화살표 함수로 정의 되어 있어서 아무리 메서드로 호출이 아닌 함수로 호출을 해도
+// 화살표 함수 안에 정의된 this는 죽어도 전역객체로 바뀌지 않는다
+var obj = {
+  outer: function () {
+    console.log("[화살표함수 이용 this]", this);
+    var innerFunc = () => {
+      console.log("[화살표함수 이용 this]", this);
+    };
+    innerFunc();
+  },
+};
+obj.outer();

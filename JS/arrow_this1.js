@@ -12,13 +12,14 @@
 
 // 객체의 메서드로는 화살표함수보다는 일반함수로 작성하는게 보다 적합
 // 화살표함수에서는 객체 내부 속성에 접근이 어려운 경우가 많다
+let name = "shim";
 const object = {
   name: "별코딩",
   main: function () {
     console.log(this.name + "입니다");
   },
   mainArrow: () => {
-    console.log(this);
+    console.log(this.name);
   },
 };
 
