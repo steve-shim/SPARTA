@@ -7,7 +7,10 @@ const counter = (function () {
   // 클로저인 메서드(increase, decrease)를 갖는 객체를 반환한다.
   // property는 public -> 은닉되지 않는다.
   return {
-    increase() {
+    increase(test) {
+      if (typeof test === "number") {
+        num = num + test;
+      }
       return ++num;
     },
     decrease() {
@@ -16,7 +19,7 @@ const counter = (function () {
   };
 })();
 
-console.log(counter.increase()); // 1
+console.log(counter.increase(123)); // 1
 console.log(counter.increase()); // 2
 
 console.log(counter.decrease()); // 1

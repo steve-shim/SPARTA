@@ -3,7 +3,7 @@
 var addCoffee = function (name) {
   return new Promise(function (resolve) {
     setTimeout(function () {
-      resolve(name);
+      resolve(`<<${name}>>`);
     }, 500);
   });
 };
@@ -11,9 +11,10 @@ var addCoffee = function (name) {
 var TimeCoffee = function () {
   return new Promise(function (resolve) {
     setTimeout(function () {
+      console.log("Loading...1");
       resolve(123);
-      console.log("Loading...");
-    }, 5000);
+      console.log("Loading...2");
+    }, 2000);
   });
 };
 
@@ -27,7 +28,7 @@ var coffeeMaker = async function () {
     return "hi";
   };
   var text = await _addCoffee("에스프레소");
-  console.log(coffeeList);
+  console.log("coffeeList", coffeeList);
   console.log("text", text);
   var num = await TimeCoffee("에스프레소");
   console.log("num", num);
@@ -40,5 +41,8 @@ var coffeeMaker = async function () {
   var text = await _addCoffee("카페라떼");
   console.log(coffeeList);
   console.log("text", text);
+  return coffeeList;
 };
-coffeeMaker();
+coffeeMaker().then((a) => {
+  console.log("a", a);
+});

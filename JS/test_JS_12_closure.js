@@ -1,11 +1,11 @@
 // [CASE 1]
 // const x = 1;
-
 // function outerFunc() {
 //   const x = 10;
-//   // 함수가 선언된 렉시컬 환경!!
+//   // outer = 함수가 선언된 렉시컬 환경!!
 //   // = 함수가 선언될 당시의 외부 변수 등의 정보!!
 //   function innerFunc() {
+//     // 먼저 innerFunc 내부에서 변수 x를 찾아보고 없으면 outer에서 찾는다
 //     console.log("x", x); // 10
 //   }
 //   innerFunc();
@@ -18,7 +18,7 @@
 // JS엔진은 함수를 어디서 ‘호출했는지’가 아니라 함수를 어디에 ‘정의했는지’에 따라 상위 스코프를 결정
 // innerFunc()에서는 outerFunc()의 x에 접근할 수 없죠.
 // Lexical Scope를 따르는 프로그래밍 언어이기 때문
-const x = 1;
+let x = 1;
 function outerFunc() {
   const x = 10;
   innerFunc(); // 1

@@ -24,6 +24,11 @@ var obj = {
       console.log(this); // (2) obj
     };
     innerFunc();
+
+    var obj2 = {
+      innerMethod: innerFunc,
+    };
+    obj2.innerMethod(); // (3) obj
   },
 };
 

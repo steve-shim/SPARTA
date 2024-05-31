@@ -29,7 +29,7 @@ async function sampleFunc() {
       setTimeout(() => {
         const result = ["Apple", "Google", "Amazon"];
         resolve(result);
-      }, 400);
+      }, 500);
     });
   };
 
@@ -57,14 +57,17 @@ async function sampleFunc2() {
   const promise1 = Promise.resolve(3);
   const promise2 = 42;
   const promise3 = new Promise((resolve, reject) => {
-    setTimeout(resolve, 500, "foo");
+    setTimeout(resolve, 600, "foo");
   });
 
-  //   await Promise.all([promise1, promise2, promise3]).then((values) => {
-  //     console.log(values);
-  //   });
+  await Promise.all([promise1, promise2, promise3]).then((values) => {
+    console.log("values", values);
+  });
 
   const values = await Promise.all([promise1, promise2, promise3]);
+  // await Promise.all([promise1, promise2, promise3]).then((values) => {
+  //   console.log("values", values);
+  // });
 
   // time end
   console.timeEnd("promise all example2");
