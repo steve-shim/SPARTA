@@ -21,6 +21,10 @@ new Promise(function (resolve) {
       }, 500);
     });
   })
+  .then((a) => {
+    console.log("a", a);
+    return a + ", SHIM";
+  })
   .then(function (prevName) {
     return new Promise(function (resolve) {
       setTimeout(function () {

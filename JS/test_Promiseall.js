@@ -72,7 +72,11 @@ async function sampleFunc2() {
   // time end
   console.timeEnd("promise all example2");
   console.log("%j", values);
+
+  return values;
 }
 // execute
-sampleFunc2();
+sampleFunc2().then((res) => {
+  console.log("res", res);
+});
 console.log("hihi");
