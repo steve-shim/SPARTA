@@ -25,4 +25,4 @@ class Person {
 const spartan = new Person("Spartan", 30);
 //spartan._age = 25; // Error: Property '_age' is private and only accessible within class 'Person'.
 spartan.growOlder();
-//console.log(spartan.age); // [getter를 정의 안하는 경우 에러]Error: Property 'age' is private and only accessible within class 'Person'.
+console.log(spartan.age); // [getter를 정의 안하는 경우 에러]Error: Property 'age' is private and only accessible within class 'Person'.
