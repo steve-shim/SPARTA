@@ -45,4 +45,8 @@ new Promise(function (resolve) {
   })
   .then((res) => {
     console.log("FINAL NAME", res);
+    return "END";
+  })
+  .then((res) => {
+    console.log("FINAL", res);
   });
